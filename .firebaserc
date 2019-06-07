@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "myfavoriteonline"
+    "default": "myfavoriteonline",
+    "development": "myfavoriteonline"
   }
 }
