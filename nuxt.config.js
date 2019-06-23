@@ -2,6 +2,7 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   mode: 'spa',
+  src: 'app',
   /*
    ** Headers of the page
    */
@@ -25,6 +26,9 @@ export default {
           'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
       }
     ]
+  },
+  router: {
+    middleware: ['auth']
   },
   /*
    ** Customize the progress-bar color
@@ -51,7 +55,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:8080'
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module

@@ -21,10 +21,9 @@
 <script>
 export default {
   async asyncData({ app }) {
-    const items = await app.$axios.$get('http://localhost:8080')
+    const items = await app.$axios.$get('/')
     if (items.status) {
       const posts = items.posts
-      console.log(items.posts)
       return {
         posts
       }
