@@ -23,7 +23,7 @@
       </button>
     </form>
     <div v-else>
-      Hello {{ $store.state.authUser.username }}!
+      Hello {{ $store.state.user }}!
       <pre>
 I am the secret content, I am shown only when the user is connected.</pre
       >

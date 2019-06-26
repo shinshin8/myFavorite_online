@@ -18,10 +18,11 @@ export const mutations = {
 export const actions = {
   async login({ commit }, { username, password }) {
     try {
-      const user = await this.$axios.$post('/login', {
+      const res = await this.$axios.$post('/login', {
         username,
         password
       })
+      const user = res.token
       commit('setUser', { user })
     } catch (error) {
       if (error.response && error.response.status === 401) {
