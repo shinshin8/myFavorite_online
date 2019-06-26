@@ -12,13 +12,14 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "eslint": "./node_modules/.bin/eslint --fix */**.vue"
+    "eslint": "./node_modules/.bin/eslint --fix */**/**.vue"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/vuetify": "0.5.5",
     "firebase": "^6.1.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "universal-cookie": "^4.0.0"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^0.0.1",
