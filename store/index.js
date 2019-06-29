@@ -68,5 +68,8 @@ export const actions = {
       }
       throw error
     }
+  },
+  async logout({ commit }) {
+    await commit('setUser', '')
   }
 }

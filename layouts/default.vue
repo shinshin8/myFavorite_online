@@ -24,7 +24,7 @@
             <v-list-tile-title v-text="signUp.title" />
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile v-if="$store.state.user" to="/inspire">
+        <v-list-tile v-if="$store.state.user" @click="logout">
           <v-list-tile-action>
             <v-icon>{{ inspire.icon }}</v-icon>
           </v-list-tile-action>
@@ -60,6 +60,7 @@ export default {
       clipped: false,
       drawer: false,
       fixed: false,
+      formError: null,
       login: {
         icon: 'apps',
         title: 'Login'
@@ -70,12 +71,21 @@ export default {
       },
       inspire: {
         icon: 'apps',
-        title: 'Log Out'
+        title: 'Logout'
       },
       miniVariant: false,
       right: true,
       rightDrawer: false,
       title: 'Find My Favorite'
+    }
+  },
+  methods: {
+    async logout() {
+      try {
+        await this.$store.dispatch('logout')
+      } catch (e) {
+        this.formError = e.message
+      }
     }
   }
 }
