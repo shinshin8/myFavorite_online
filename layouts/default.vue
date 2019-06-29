@@ -8,12 +8,20 @@
       app
     >
       <v-list>
-        <v-list-tile to="/login">
+        <v-list-tile v-if="!$store.state.user" to="/login">
           <v-list-tile-action>
             <v-icon>{{ login.icon }}</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="login.title" />
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile v-if="!$store.state.user" to="/signUp">
+          <v-list-tile-action>
+            <v-icon>{{ signUp.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="signUp.title" />
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile v-if="$store.state.user" to="/inspire">
@@ -54,12 +62,15 @@ export default {
       fixed: false,
       login: {
         icon: 'apps',
-        title: 'login',
-        to: '/'
+        title: 'Login'
+      },
+      signUp: {
+        icon: 'apps',
+        title: 'Sign Up'
       },
       inspire: {
-        icon: 'bubble_chart',
-        title: 'Inspire'
+        icon: 'apps',
+        title: 'Log Out'
       },
       miniVariant: false,
       right: true,
