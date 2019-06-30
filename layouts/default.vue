@@ -7,8 +7,8 @@
       fixed
       app
     >
-      <v-list>
-        <v-list-tile v-if="!$store.state.user" to="/login">
+      <v-list v-if="!$store.state.user">
+        <v-list-tile to="/login">
           <v-list-tile-action>
             <v-icon>{{ login.icon }}</v-icon>
           </v-list-tile-action>
@@ -16,7 +16,7 @@
             <v-list-tile-title v-text="login.title" />
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile v-if="!$store.state.user" to="/signUp">
+        <v-list-tile to="/signUp">
           <v-list-tile-action>
             <v-icon>{{ signUp.icon }}</v-icon>
           </v-list-tile-action>
@@ -24,7 +24,17 @@
             <v-list-tile-title v-text="signUp.title" />
           </v-list-tile-content>
         </v-list-tile>
-        <v-list-tile v-if="$store.state.user" @click="logout">
+      </v-list>
+      <v-list v-if="$store.state.user">
+        <v-list-tile to="/favorite">
+          <v-list-tile-action>
+            <v-icon>{{ favorite.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="favorite.title" />
+          </v-list-tile-content>
+        </v-list-tile>
+        <v-list-tile @click="logout">
           <v-list-tile-action>
             <v-icon>{{ inspire.icon }}</v-icon>
           </v-list-tile-action>
@@ -68,6 +78,10 @@ export default {
       signUp: {
         icon: 'apps',
         title: 'Sign Up'
+      },
+      favorite: {
+        icon: 'apps',
+        title: 'Favorite List'
       },
       inspire: {
         icon: 'apps',
