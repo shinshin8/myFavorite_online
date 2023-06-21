@@ -18,7 +18,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/vuetify": "0.5.5",
     "firebase": "^6.1.1",
-    "nuxt": "^2.0.0",
+    "nuxt": "^3.4.3",
     "universal-cookie": "^4.0.0"
   },
   "devDependencies": {
